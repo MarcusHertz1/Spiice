@@ -2,11 +2,27 @@ package com.example.spiice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.example.spiice.databinding.ActivityMainBinding
+import com.example.spiice.fragments.StartFragment
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        addFragment(StartFragment())
+    }
+
+    fun addFragment(fragment: Fragment){
+        val fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.add(binding.fragmentContainerView.id, fragment, fragment.toString())
+        fragmentTransaction.addToBackStack(fragment.toString())
+        fragmentTransaction.commit()
     }
 
 }

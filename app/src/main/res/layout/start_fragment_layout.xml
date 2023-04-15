@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background">
+
+    <TextView
+        android:id="@+id/spiiceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/spiice"
+        app:layout_constraintBottom_toTopOf="@+id/discoverThePlatformBt"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize = "96sp"
+        android:textColor = "@color/mainBlack"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/discoverThePlatformBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/discover_the_platform"
+        app:layout_constraintBottom_toTopOf="@+id/logInBt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="37dp"
+        android:textAllCaps="false"
+        android:textSize = "18sp"
+        android:textColor = "@color/white"
+        android:backgroundTint="@color/mainPurple"
+        app:cornerRadius="60dp"
+        android:paddingVertical="17dp"
+        android:paddingHorizontal="47dp"/>
+
+
+
+    <TextView
+        android:id="@+id/logInBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="98dp"
+        android:text="@string/you_have_an_account_log_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize = "18sp"
+        android:textColor = "@color/mainBlack"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
