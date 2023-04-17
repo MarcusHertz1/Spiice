@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.spiice.MainActivity
 import com.example.spiice.R
 import com.example.spiice.databinding.PagerFragmentLayoutBinding
 
@@ -25,6 +26,10 @@ class PagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         changePager()
+
+        binding.logInPagerBt.setOnClickListener {
+            (activity as? MainActivity)?.addFragment(LogInFragment())
+        }
     }
 
     private fun changePager() {

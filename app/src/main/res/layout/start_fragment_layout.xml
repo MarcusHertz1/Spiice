@@ -17,12 +17,12 @@
         android:id="@+id/discoverThePlatformBt"
         style="@style/MainButtonStyle"
         android:layout_marginBottom="37dp"
-        app:layout_constraintBottom_toTopOf="@+id/logInBt"
+        app:layout_constraintBottom_toTopOf="@+id/signUpBt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/logInBt"
+        android:id="@+id/signUpBt"
         style="@style/BottomTextStyle"
         android:layout_marginBottom="98dp"
         app:layout_constraintBottom_toBottomOf="parent"

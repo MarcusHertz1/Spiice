@@ -10,4 +10,6 @@
 
     <color name="mainBlack">#120E21</color>
     <color name="mainPurple">#9378FF</color>
+    <color name="mainPink">#FBEEFF</color>
+    <color name="mainGray">#99879D</color>
 </resources>

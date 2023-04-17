@@ -9,4 +9,13 @@
     <string name="pager_text_2">Chat with others freelancers\nand develop your network</string>
     <string name="pager_text_3">Work hard and level up!</string>
     <string name="pager_text_4">Enjoy your progress!</string>
+    <string name="email">Email</string>
+    <string name="log_in">Log In</string>
+    <string name="log_in_text">Log In</string>
+    <string name="password">Password</string>
+    <string name="return_to_sign_up">Return to Sign-up</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_bt">Sign Up</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
 </resources>

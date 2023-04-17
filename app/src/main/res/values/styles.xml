@@ -35,4 +35,12 @@
         <item name="android:layout_marginStart">4dp</item>
         <item name="srcCompat">@drawable/inactive_dot</item>
     </style>
+
+    <style name="TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/mainGray</item>
+        <item name="android:background">@color/mainPink</item>
+    </style>
 </resources>
