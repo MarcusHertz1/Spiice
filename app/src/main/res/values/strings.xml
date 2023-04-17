@@ -18,4 +18,5 @@
     <string name="sign_up_bt">Sign Up</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
+    <string name="obligatoryField">Obligatory field</string>
 </resources>

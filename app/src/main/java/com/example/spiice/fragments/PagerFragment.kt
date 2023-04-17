@@ -27,8 +27,8 @@ class PagerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         changePager()
 
-        binding.logInPagerBt.setOnClickListener {
-            (activity as? MainActivity)?.addFragment(LogInFragment())
+        binding.skipBt.setOnClickListener {
+            (activity as? MainActivity)?.addFragment(SignUpFragment())
         }
     }
 

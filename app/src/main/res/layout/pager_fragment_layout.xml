@@ -37,16 +37,6 @@
         app:srcCompat="@drawable/pager_image_0"
         tools:ignore="ContentDescription" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/logInPagerBt"
-        style="@style/MainButtonStyle"
-        android:layout_width="263dp"
-        android:layout_height="76dp"
-        android:text="@string/log_in"
-        app:layout_constraintBottom_toBottomOf="@+id/pagerImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/subtitle"
         style="@style/BottomTextStyle"
