@@ -19,4 +19,7 @@
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
     <string name="obligatoryField">Obligatory field</string>
+    <string name="badEmail">Incorrect Email</string>
+    <string name="badPassword">Incorrect Password</string>
+    <string name="badName">Incorrect Name</string>
 </resources>
