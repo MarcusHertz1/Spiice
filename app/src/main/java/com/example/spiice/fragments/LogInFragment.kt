@@ -31,6 +31,7 @@ class LogInFragment : Fragment() {
         binding.logInBt.setOnClickListener {
             binding.emailTIL.error =  if (binding.emailTIET.text?.isEmpty() == true ) requireContext().getString(R.string.obligatoryField) else ""
             binding.passwordTIL.error =  if (binding.passwordTIET.text?.isEmpty() == true ) requireContext().getString(R.string.obligatoryField) else ""
+            (activity as? MainActivity)?.addFragment(MainFragment())
         }
     }
 }

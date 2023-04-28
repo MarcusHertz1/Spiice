@@ -12,4 +12,7 @@
     <color name="mainPurple">#9378FF</color>
     <color name="mainPink">#FBEEFF</color>
     <color name="mainGray">#99879D</color>
+    <color name="toolBarGray">#99879D</color>
+
+
 </resources>

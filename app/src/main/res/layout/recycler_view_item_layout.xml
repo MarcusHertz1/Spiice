@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="88dp">
+
+    <TextView
+        android:id="@+id/titleTV"
+        style="@style/SpiiceTitle"
+        android:text="@string/title"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/dateTV"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/messageTV"
+        style="@style/SpiiceTitle"
+        android:layout_marginTop="8dp"
+        android:text="@string/message"
+        android:textColor="@color/toolBarGray"
+        android:textSize="16sp"
+        android:lineSpacingExtra="7sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/dateTV"
+        style="@style/SpiiceTitle"
+        android:text="@string/_01_01_2020"
+        android:textColor="@color/toolBarGray"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTV"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

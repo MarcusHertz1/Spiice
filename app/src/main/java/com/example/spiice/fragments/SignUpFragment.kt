@@ -32,6 +32,10 @@ class SignUpFragment : Fragment () {
         }
 
         binding.signUpBt.setOnClickListener {
+            (activity as? MainActivity)?.addFragment(MainFragment())
+        }
+
+        binding.signUpBt.setOnClickListener {
             binding.emailTIL.error =  if (!viewModel.checkEmail(binding.emailTIET.text.toString()))
                 requireContext().getString(R.string.badEmail) else ""
             binding.passwordTIL.error =  if (!viewModel.checkPassword(binding.passwordTIET.text.toString()))

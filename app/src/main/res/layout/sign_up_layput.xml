@@ -44,7 +44,8 @@
             android:id="@+id/firstNameTIET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/mainBlack" />
+            android:textColor="@color/mainBlack"
+            android:background="@color/mainPink" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -60,7 +61,8 @@
             android:id="@+id/lastNameTIET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/mainBlack" />
+            android:textColor="@color/mainBlack"
+            android:background="@color/mainPink" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -77,7 +79,8 @@
             android:id="@+id/emailTIET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/mainBlack" />
+            android:textColor="@color/mainBlack"
+            android:background="@color/mainPink" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -93,7 +96,8 @@
             android:id="@+id/passwordTIET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/mainBlack" />
+            android:textColor="@color/mainBlack"
+            android:background="@color/mainPink" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
