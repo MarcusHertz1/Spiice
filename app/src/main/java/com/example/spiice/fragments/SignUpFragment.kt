@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.spiice.MainActivity
 import com.example.spiice.R
+import com.example.spiice.SharedPreferences
 import com.example.spiice.ViewModel
 import com.example.spiice.databinding.SignUpLayputBinding
 
@@ -32,11 +33,7 @@ class SignUpFragment : Fragment () {
         }
 
         binding.signUpBt.setOnClickListener {
-            (activity as? MainActivity)?.addFragment(MainFragment())
-        }
-
-        binding.signUpBt.setOnClickListener {
-            binding.emailTIL.error =  if (!viewModel.checkEmail(binding.emailTIET.text.toString()))
+            binding.emailTIL.error =  if (!viewModel.checkEmail(binding.emailTIET.text.toString()) && !SharedPreferences.checkEmailExists(binding.emailTIET.text.toString()))
                 requireContext().getString(R.string.badEmail) else ""
             binding.passwordTIL.error =  if (!viewModel.checkPassword(binding.passwordTIET.text.toString()))
                 requireContext().getString(R.string.badPassword) else ""
@@ -45,6 +42,11 @@ class SignUpFragment : Fragment () {
             binding.lastNameTIL.error =  if (!viewModel.checkName(binding.lastNameTIET.text.toString()))
                 requireContext().getString(R.string.badName) else ""
 
+            if (binding.emailTIL.error == null && binding.passwordTIL.error == null && binding.firstNameTIL.error == null && binding.lastNameTIL.error == null){
+                (activity as? MainActivity)?.addFragment(MainFragment())
+                SharedPreferences.setEmailsPasswords(binding.emailTIET.text.toString(), binding.passwordTIET.text.toString())
+                SharedPreferences.setLoggedEmail(binding.emailTIET.text.toString())
+            }
         }
     }
 }

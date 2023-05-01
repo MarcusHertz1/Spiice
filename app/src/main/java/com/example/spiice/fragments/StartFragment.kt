@@ -26,5 +26,9 @@ class StartFragment : Fragment() {
         binding.discoverThePlatformBt.setOnClickListener {
             (activity as? MainActivity)?.addFragment(PagerFragment())
         }
+
+        binding.logInBt.setOnClickListener {
+            (activity as? MainActivity)?.addFragment(LogInFragment())
+        }
     }
 }

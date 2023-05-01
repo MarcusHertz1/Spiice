@@ -26,5 +26,10 @@ class MainFragment : Fragment() {
         binding.addNewBt.setOnClickListener {
             (activity as? MainActivity)?.addFragment(NewNoteFragment())
         }
+
+        binding.logoutBt.setOnClickListener {
+            (activity as? MainActivity)?.logOut()
+        }
+
     }
 }
