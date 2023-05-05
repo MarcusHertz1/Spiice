@@ -35,16 +35,11 @@ class MainFragment : Fragment() {
         binding.logoutBt.setOnClickListener {
             (activity as? MainActivity)?.logOut()
         }
-        viewModel.updateRecyclerView()
-    }
-
-    override fun onResume() {
-        super.onResume()
-
         viewModel.updateRecyclerViewLiveData.observe(viewLifecycleOwner){
             binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
             val adapter = Adapter(viewModel.getDBArray(requireContext()))
             binding.recyclerView.adapter = adapter
         }
+        viewModel.updateRecyclerView()
     }
 }
