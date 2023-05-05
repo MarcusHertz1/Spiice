@@ -1,17 +1,20 @@
 package com.example.spiice.fragments
 
-import android.content.ContentValues
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.spiice.DBHelper
+import androidx.fragment.app.viewModels
+import com.example.spiice.R
+import com.example.spiice.ViewModel
 import com.example.spiice.databinding.NewNoteLayoutBinding
 
 
 class NewNoteFragment : Fragment() {
     private lateinit var binding: NewNoteLayoutBinding
+    private val viewModel: ViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,15 +31,17 @@ class NewNoteFragment : Fragment() {
         binding.backBt.setOnClickListener {
             activity?.onBackPressedDispatcher?.onBackPressed()
         }
-        val dbHelper = DBHelper(requireContext())
-        val database = dbHelper.writableDatabase
-        val contentValues = ContentValues()
+
+
         binding.addBt.setOnClickListener {
-            contentValues.put(DBHelper.KEY_MAIL, "change me!!!!!!!!!!!!!!!!!!!!!!")
-            contentValues.put(DBHelper.KEY_TITLE, binding.titleTIET.text.toString())
-            contentValues.put(DBHelper.KEY_MESSAGE, binding.messageTIET.text.toString())
-            database.insert(DBHelper.TABLE_CONTACTS, null, contentValues)
-            activity?.onBackPressedDispatcher?.onBackPressed()
+            binding.messageTIL.error =
+                if (binding.messageTIET.text?.isEmpty() == true) requireContext().getString(
+                    R.string.obligatoryField
+                ) else ""
+            if (binding.messageTIL.error == null) {
+                viewModel.setDBDate(requireContext(), binding.titleTIET.text.toString(), binding.messageTIET.text.toString())
+                activity?.onBackPressedDispatcher?.onBackPressed()
+            }
         }
     }
 }

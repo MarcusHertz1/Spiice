@@ -5,11 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spiice.MainActivity
+import com.example.spiice.ViewModel
+import com.example.spiice.adapter.Adapter
 import com.example.spiice.databinding.MainLayoutBinding
 
 class MainFragment : Fragment() {
     private lateinit var binding: MainLayoutBinding
+    private val viewModel: ViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,6 +35,8 @@ class MainFragment : Fragment() {
         binding.logoutBt.setOnClickListener {
             (activity as? MainActivity)?.logOut()
         }
-
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        val adapter = Adapter(viewModel.getDBArray(requireContext()))
+        binding.recyclerView.adapter = adapter
     }
 }
