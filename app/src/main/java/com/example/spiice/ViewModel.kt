@@ -36,6 +36,7 @@ class ViewModel (app: Application) : AndroidViewModel(app) {
         cursor?.apply {
             moveToFirst()
             while (!cursor.isAfterLast){
+                val idIndex = getColumnIndex(DBHelper.KEY_ID)
                 val titleIndex = getColumnIndex(DBHelper.KEY_TITLE)
                 val messageIndex = getColumnIndex(DBHelper.KEY_MESSAGE)
                 val dateIndex = getColumnIndex(DBHelper.KEY_DATE)
@@ -48,6 +49,9 @@ class ViewModel (app: Application) : AndroidViewModel(app) {
                 }
                 if (dateIndex >= 0) {
                     item.date = getString(dateIndex)
+                }
+                if (idIndex >= 0) {
+                    item.id = getInt(idIndex)
                 }
                 result.add(item)
                 cursor.moveToNext()

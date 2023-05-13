@@ -37,7 +37,8 @@ class MainFragment : Fragment() {
         }
         viewModel.updateRecyclerViewLiveData.observe(viewLifecycleOwner){
             binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            val adapter = Adapter(viewModel.getDBArray(requireContext()))
+            val adapter = Adapter(viewModel.getDBArray(requireContext()), requireContext()
+            ) { viewModel.updateRecyclerView() }
             binding.recyclerView.adapter = adapter
         }
         viewModel.updateRecyclerView()

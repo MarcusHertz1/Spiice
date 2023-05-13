@@ -42,4 +42,10 @@ class DBHelper(context: Context?) :
         return db.rawQuery("SELECT * FROM $TABLE_CONTACTS", null)
 
     }
+
+    fun delete(id: Int){
+        val db = this.writableDatabase
+        db.delete(TABLE_CONTACTS, "$KEY_ID=$id", null)
+        db.close()
+    }
 }
