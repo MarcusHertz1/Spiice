@@ -13,6 +13,9 @@
     <color name="mainPink">#FBEEFF</color>
     <color name="mainGray">#99879D</color>
     <color name="toolBarGray">#99879D</color>
+    <color name="transparent">#00000000</color>
+    <color name="grayBG">#66000000</color>
+    <color name="deleteBT">#B38A1111</color>
 
 
 </resources>

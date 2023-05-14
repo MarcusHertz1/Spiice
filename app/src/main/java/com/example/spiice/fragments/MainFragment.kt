@@ -35,10 +35,14 @@ class MainFragment : Fragment() {
         binding.logoutBt.setOnClickListener {
             (activity as? MainActivity)?.logOut()
         }
+
         viewModel.updateRecyclerViewLiveData.observe(viewLifecycleOwner){
             binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            val adapter = Adapter(viewModel.getDBArray(requireContext()), requireContext()
-            ) { viewModel.updateRecyclerView() }
+            val adapter = Adapter(viewModel.getDBArray(requireContext())
+            ) { id ->
+                viewModel.deletedItemId = id
+                (activity as? MainActivity)?.addFragment(DeleteDialogFragment())
+            }
             binding.recyclerView.adapter = adapter
         }
         viewModel.updateRecyclerView()
