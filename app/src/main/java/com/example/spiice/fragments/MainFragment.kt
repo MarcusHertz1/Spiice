@@ -38,7 +38,12 @@ class MainFragment : Fragment() {
 
         viewModel.updateRecyclerViewLiveData.observe(viewLifecycleOwner){
             binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            val adapter = Adapter(viewModel.getDBArray(requireContext())
+            val adapter = Adapter(viewModel.getDBArray(requireContext()),
+                { title, message ->
+                viewModel.showingTitle = title
+                viewModel.showingMessage = message
+                (activity as? MainActivity)?.addFragment(ViewNoteFragment())
+            }
             ) { id ->
                 viewModel.deletedItemId = id
                 (activity as? MainActivity)?.addFragment(DeleteDialogFragment())

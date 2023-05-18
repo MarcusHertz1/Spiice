@@ -13,6 +13,8 @@ import java.util.*
 class ViewModel (app: Application) : AndroidViewModel(app) {
 
     var deletedItemId = -1
+    var showingTitle = ""
+    var showingMessage = ""
 
     private val updateRecyclerViewMutableLiveData = MutableLiveData<Unit>()
     val updateRecyclerViewLiveData: LiveData<Unit> = updateRecyclerViewMutableLiveData

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spiice.databinding.RecyclerViewItemLayoutBinding
 
-class Adapter(private var itemsList: List<AdapterItem>, private var callDeleteDialog: (id: Int) -> Unit ) :
+class Adapter(private var itemsList: List<AdapterItem>, private var showNote: ( title: String, message: String) -> Unit , private var callDeleteDialog: (id: Int) -> Unit ) :
     RecyclerView.Adapter<Adapter.ViewHolder>() {
     inner class ViewHolder(val binding: RecyclerViewItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -28,6 +28,10 @@ class Adapter(private var itemsList: List<AdapterItem>, private var callDeleteDi
                 binding.titleTV.text = this.title
                 binding.messageTV.text = this.message
                 binding.dateTV.text = this.date
+
+                binding.container.setOnClickListener {
+                    showNote(this.title, this.message)
+                }
             }
         }
     }
