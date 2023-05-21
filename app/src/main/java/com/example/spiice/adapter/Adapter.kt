@@ -23,14 +23,15 @@ class Adapter(private var itemsList: List<AdapterItem>, private var showNote: ( 
         with(holder) {
             with(itemsList[position]) {
                 binding.deleteBt.setOnClickListener {
-                    callDeleteDialog(this.id)
+                    callDeleteDialog(id)
                 }
-                binding.titleTV.text = this.title
-                binding.messageTV.text = this.message
-                binding.dateTV.text = this.date
+
+                binding.titleTV.text = title
+                binding.messageTV.text = message
+                binding.dateTV.text = date
 
                 binding.container.setOnClickListener {
-                    showNote(this.title, this.message)
+                    showNote(title, message)
                 }
             }
         }

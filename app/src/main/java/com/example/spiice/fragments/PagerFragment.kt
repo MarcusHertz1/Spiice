@@ -63,7 +63,7 @@ class PagerFragment : Fragment() {
             mainHandler.post(object : Runnable {
                 override fun run() {
                     pagerImage.setImageResource(imageArray[activePage])
-                    subtitle.text = requireContext().getString(textArray[activePage])
+                    subtitle.setText(textArray[activePage])
                     for (i in 0..4) {
                         dotArray[i].setImageResource(
                             if (i == activePage) R.drawable.active_dot

@@ -32,7 +32,6 @@ class NewNoteFragment : Fragment() {
             activity?.onBackPressedDispatcher?.onBackPressed()
         }
 
-
         binding.addBt.setOnClickListener {
             binding.messageTIL.error =
                 if (binding.messageTIET.text?.isEmpty() == true) requireContext().getString(

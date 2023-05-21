@@ -29,11 +29,11 @@ class SignUpFragment : Fragment () {
         super.onViewCreated(view, savedInstanceState)
 
         binding.subtitle.setOnClickListener {
-            (activity as? MainActivity)?.addFragment(LogInFragment())
+            (activity as? MainActivity)?.replaceFragment(LogInFragment())
         }
 
         binding.signUpBt.setOnClickListener {
-            binding.emailTIL.error =  if (!viewModel.checkEmail(binding.emailTIET.text.toString()) && !SharedPreferences.checkEmailExists(binding.emailTIET.text.toString()))
+            binding.emailTIL.error =  if (!viewModel.checkEmail(binding.emailTIET.text.toString()) && !viewModel.checkEmailExists(binding.emailTIET.text.toString()))
                 requireContext().getString(R.string.badEmail) else ""
             binding.passwordTIL.error =  if (!viewModel.checkPassword(binding.passwordTIET.text.toString()))
                 requireContext().getString(R.string.badPassword) else ""
